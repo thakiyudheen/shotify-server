@@ -3,11 +3,13 @@
 const cors = require('cors');
 const Url = require('./models/Url');
 const { connectDb } = require('./mongoDb/connectDb');
+const morgan = require('morgan')
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(morgan('dev'))
 
 
 connectDb()
