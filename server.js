@@ -9,7 +9,7 @@ const morgan = require('morgan')
 
 const app = express();
 const corsOptions = {
-  origin: 'https://shotify-server.onrender.com', // Allow only this origin
+  origin: 'https://shotify-client.vercel.app', // Allow only this origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow specific HTTP methods
   credentials: true, // Allow credentials (cookies, authorization headers)
   allowedHeaders: 'Content-Type,Authorization', // Allow specific headers
