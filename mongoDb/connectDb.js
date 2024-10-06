@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config()
 
 
 const connectDb = () => {
 
-    mongoose.connect('mongodb://localhost:27017/linkshortener', {
+    mongoose.connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => {
