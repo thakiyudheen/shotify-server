@@ -6,8 +6,17 @@ const { connectDb } = require('./mongoDb/connectDb');
 const morgan = require('morgan')
 
 
+
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: 'https://shotify-server.onrender.com', // Allow only this origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow specific HTTP methods
+  credentials: true, // Allow credentials (cookies, authorization headers)
+  allowedHeaders: 'Content-Type,Authorization', // Allow specific headers
+};
+
+// Use CORS with the defined options
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'))
 
